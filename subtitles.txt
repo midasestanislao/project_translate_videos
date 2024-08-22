@@ -1,0 +1,793 @@
+{'text': '[Music]', 'start': 4.23, 'duration': 6.57}
+{'text': 'what is going on guys welcome back in', 'start': 9.2, 'duration': 3.04}
+{'text': "today's video we're going to talk about", 'start': 10.8, 'duration': 3.759}
+{'text': 'ocr which stands for optical character', 'start': 12.24, 'duration': 3.84}
+{'text': "recognition and we're going to use", 'start': 14.559, 'duration': 3.361}
+{'text': 'python in combination with tesseract in', 'start': 16.08, 'duration': 4.32}
+{'text': 'order to extract text from images so', 'start': 17.92, 'duration': 4.32}
+{'text': "we're going to take images that contain", 'start': 20.4, 'duration': 3.68}
+{'text': 'some text on the site maybe on street', 'start': 22.24, 'duration': 3.6}
+{'text': "signs and we're going to take images", 'start': 24.08, 'duration': 3.519}
+{'text': "that contain mainly text and then we're", 'start': 25.84, 'duration': 4.24}
+{'text': 'going to use ocr in order to extract the', 'start': 27.599, 'duration': 4.241}
+{'text': 'text from the images and for this the', 'start': 30.08, 'duration': 3.12}
+{'text': 'first thing we need to do is we need to', 'start': 31.84, 'duration': 3.84}
+{'text': "install tesseract it's an open source", 'start': 33.2, 'duration': 4.72}
+{'text': 'ocr engine and you can find it on', 'start': 35.68, 'duration': 4.719}
+{'text': 'github.com tesseract', 'start': 37.92, 'duration': 4.639}
+{'text': 'ocr tesseract', 'start': 40.399, 'duration': 4.241}
+{'text': 'and in here you can scroll down to', 'start': 42.559, 'duration': 5.361}
+{'text': 'installing tesseract and you can go to', 'start': 44.64, 'duration': 6.239}
+{'text': 'install tesseract via pre-build binary', 'start': 47.92, 'duration': 5.279}
+{'text': 'package if you want to do that and if', 'start': 50.879, 'duration': 4.881}
+{'text': 'you click on this you can scroll down', 'start': 53.199, 'duration': 5.281}
+{'text': 'where is it down here to ubuntu debian', 'start': 55.76, 'duration': 5.36}
+{'text': "windows and you can if you're on windows", 'start': 58.48, 'duration': 5.52}
+{'text': 'click just windows tesseract at ub', 'start': 61.12, 'duration': 6.56}
+{'text': "manheim and then you're going to get an", 'start': 64.0, 'duration': 5.2}
+{'text': 'installer for windows here by just', 'start': 67.68, 'duration': 4.24}
+{'text': 'clicking on the 64-bit for example', 'start': 69.2, 'duration': 4.4}
+{'text': "downloading it running it i'm not going", 'start': 71.92, 'duration': 3.28}
+{'text': 'to do that right now because i already', 'start': 73.6, 'duration': 3.44}
+{'text': 'have test direct installed now the', 'start': 75.2, 'duration': 3.52}
+{'text': 'important thing that you need to do here', 'start': 77.04, 'duration': 3.2}
+{'text': 'is when you install it look at the', 'start': 78.72, 'duration': 3.68}
+{'text': 'directory it is going to be installed in', 'start': 80.24, 'duration': 5.12}
+{'text': 'and add this directory to the path so', 'start': 82.4, 'duration': 5.359}
+{'text': "in my case i'm not sure where it was", 'start': 85.36, 'duration': 4.0}
+{'text': 'tesseract', 'start': 87.759, 'duration': 3.521}
+{'text': "let's just open the file location of the", 'start': 89.36, 'duration': 4.56}
+{'text': 'uninstaller', 'start': 91.28, 'duration': 4.56}
+{'text': 'open file location there you go so we', 'start': 93.92, 'duration': 4.32}
+{'text': 'have this tesseract ocr this is the', 'start': 95.84, 'duration': 4.72}
+{'text': "location in my case so for me it's c", 'start': 98.24, 'duration': 5.839}
+{'text': 'program files test rec.ocr', 'start': 100.56, 'duration': 5.28}
+{'text': 'what you want to do is you want to go to', 'start': 104.079, 'duration': 3.36}
+{'text': 'the environment variable so you want to', 'start': 105.84, 'duration': 3.279}
+{'text': 'go to edit the system environment', 'start': 107.439, 'duration': 4.161}
+{'text': 'variables and you want to click here on', 'start': 109.119, 'duration': 4.241}
+{'text': 'environment variables you want to go to', 'start': 111.6, 'duration': 3.92}
+{'text': 'the path you want to edit the path and', 'start': 113.36, 'duration': 4.719}
+{'text': 'you want to add a new entry with c', 'start': 115.52, 'duration': 5.36}
+{'text': 'program files tesseract ocr', 'start': 118.079, 'duration': 4.561}
+{'text': 'and what you also want to do is you want', 'start': 120.88, 'duration': 5.279}
+{'text': 'to add a variable here called test data', 'start': 122.64, 'duration': 6.08}
+{'text': 'underscore prefix and this is going to', 'start': 126.159, 'duration': 4.641}
+{'text': 'be the test data directory so inside of', 'start': 128.72, 'duration': 4.72}
+{'text': 'the tesseract ocr directory you have', 'start': 130.8, 'duration': 4.88}
+{'text': 'this test data directory here', 'start': 133.44, 'duration': 5.04}
+{'text': 'and uh in here you can download the', 'start': 135.68, 'duration': 4.72}
+{'text': 'languages so by default i think you only', 'start': 138.48, 'duration': 4.16}
+{'text': 'have english you can download the', 'start': 140.4, 'duration': 4.16}
+{'text': 'trained data files from the github', 'start': 142.64, 'duration': 4.64}
+{'text': 'repository so for example here i have uh', 'start': 144.56, 'duration': 4.64}
+{'text': "the german one if you're interested in", 'start': 147.28, 'duration': 3.92}
+{'text': 'having multiple languages but in order', 'start': 149.2, 'duration': 3.28}
+{'text': 'to find them you need to have this', 'start': 151.2, 'duration': 2.64}
+{'text': 'variable here', 'start': 152.48, 'duration': 3.36}
+{'text': "all right so that's basically the", 'start': 153.84, 'duration': 3.84}
+{'text': 'tesseract installation what you also', 'start': 155.84, 'duration': 3.92}
+{'text': 'need of course is you need pi tesseract', 'start': 157.68, 'duration': 4.48}
+{'text': 'because tesseract is not a python module', 'start': 159.76, 'duration': 4.24}
+{'text': 'tesseract is the engine and if you want', 'start': 162.16, 'duration': 3.6}
+{'text': 'to use it in python you have to install', 'start': 164.0, 'duration': 4.16}
+{'text': 'pi tesseract so you open up the command', 'start': 165.76, 'duration': 4.559}
+{'text': 'line and you say', 'start': 168.16, 'duration': 4.719}
+{'text': 'pip install pi', 'start': 170.319, 'duration': 5.041}
+{'text': 'tesseract like that and of course you', 'start': 172.879, 'duration': 4.481}
+{'text': 'can also i think install tesseract here', 'start': 175.36, 'duration': 4.0}
+{'text': "directly but for some reason doesn't", 'start': 177.36, 'duration': 3.519}
+{'text': 'work as well', 'start': 179.36, 'duration': 3.36}
+{'text': 'for me so i would recommend installing', 'start': 180.879, 'duration': 4.0}
+{'text': 'it from the installer and adding it to', 'start': 182.72, 'duration': 4.64}
+{'text': 'path and then just using pi tesseract', 'start': 184.879, 'duration': 4.481}
+{'text': 'now before we go into any of the python', 'start': 187.36, 'duration': 4.239}
+{'text': "code we're going to do everything", 'start': 189.36, 'duration': 4.0}
+{'text': 'manually with tesseract in the command', 'start': 191.599, 'duration': 4.401}
+{'text': 'line so that you see how this basically', 'start': 193.36, 'duration': 4.0}
+{'text': 'works and for this i have a bunch of', 'start': 196.0, 'duration': 3.519}
+{'text': 'images here for example here i have a', 'start': 197.36, 'duration': 4.159}
+{'text': 'basic image containing some text let me', 'start': 199.519, 'duration': 4.0}
+{'text': "just see if i'm not blocking it not", 'start': 201.519, 'duration': 3.921}
+{'text': 'really so i can leave it like that', 'start': 203.519, 'duration': 4.08}
+{'text': "it's basically just a text with you know", 'start': 205.44, 'duration': 4.4}
+{'text': 'just just an image with basic text but', 'start': 207.599, 'duration': 3.92}
+{'text': 'of course we cannot select this this is', 'start': 209.84, 'duration': 4.0}
+{'text': 'still an image we cannot just say copy', 'start': 211.519, 'duration': 4.321}
+{'text': 'and paste as text it is still part of an', 'start': 213.84, 'duration': 4.479}
+{'text': 'image in order to extract it this is of', 'start': 215.84, 'duration': 4.64}
+{'text': 'course a very easy thing a very easy', 'start': 218.319, 'duration': 4.48}
+{'text': "task we can use tesseract for this we're", 'start': 220.48, 'duration': 3.839}
+{'text': 'going to open up a command line and', 'start': 222.799, 'duration': 3.44}
+{'text': "we're going to navigate to the directory", 'start': 224.319, 'duration': 4.0}
+{'text': 'where this file is whatever it is in', 'start': 226.239, 'duration': 4.64}
+{'text': 'your case i have a shortcut here', 'start': 228.319, 'duration': 2.951}
+{'text': 'um', 'start': 230.879, 'duration': 1.761}
+{'text': '[Music]', 'start': 231.27, 'duration': 3.65}
+{'text': "and basically i'm interested in this", 'start': 232.64, 'duration': 5.92}
+{'text': 'text.jpg file now how do i do this very', 'start': 234.92, 'duration': 5.879}
+{'text': 'simple tesseract', 'start': 238.56, 'duration': 4.48}
+{'text': 'then the image so text', 'start': 240.799, 'duration': 6.16}
+{'text': 'dot jpg and then std out to print the', 'start': 243.04, 'duration': 6.479}
+{'text': 'result of the ocr extraction', 'start': 246.959, 'duration': 3.521}
+{'text': 'um', 'start': 249.519, 'duration': 3.36}
+{'text': 'onto the command line', 'start': 250.48, 'duration': 3.92}
+{'text': 'so by doing that you can see here', 'start': 252.879, 'duration': 3.841}
+{'text': 'instructions and i get the text here as', 'start': 254.4, 'duration': 4.32}
+{'text': 'a result so this is a very simple thing', 'start': 256.72, 'duration': 4.96}
+{'text': 'because of course the image is quite uh', 'start': 258.72, 'duration': 5.52}
+{'text': 'straightforward we have very well uh', 'start': 261.68, 'duration': 4.0}
+{'text': 'readable text', 'start': 264.24, 'duration': 3.6}
+{'text': "so let's take something that is not as", 'start': 265.68, 'duration': 4.799}
+{'text': 'easy like logos for example here we have', 'start': 267.84, 'duration': 4.24}
+{'text': 'a bunch of different words let me just', 'start': 270.479, 'duration': 3.201}
+{'text': "see again if i'm blocking anything let", 'start': 272.08, 'duration': 3.2}
+{'text': 'me just make this a little bit smaller', 'start': 273.68, 'duration': 3.44}
+{'text': 'here', 'start': 275.28, 'duration': 3.28}
+{'text': 'we can see different words here we can', 'start': 277.12, 'duration': 4.0}
+{'text': 'see sony paypal microsoft some of them', 'start': 278.56, 'duration': 4.32}
+{'text': 'should be recognized in order to see if', 'start': 281.12, 'duration': 3.12}
+{'text': "that works we're just going to do the", 'start': 282.88, 'duration': 3.52}
+{'text': "same thing and we're going to apply this", 'start': 284.24, 'duration': 3.12}
+{'text': 'on', 'start': 286.4, 'duration': 3.519}
+{'text': 'logos.jpg', 'start': 287.36, 'duration': 3.92}
+{'text': 'and this is going to be a little bit', 'start': 289.919, 'duration': 3.521}
+{'text': 'more messy as you see we can see here', 'start': 291.28, 'duration': 5.919}
+{'text': 'paypal sony microsoft bosch and so on', 'start': 293.44, 'duration': 5.92}
+{'text': "but then a lot of stuff that doesn't", 'start': 297.199, 'duration': 3.521}
+{'text': 'really make a lot of sense we can see', 'start': 299.36, 'duration': 3.92}
+{'text': 'nvidia here so it partly works probably', 'start': 300.72, 'duration': 6.64}
+{'text': 'not and um this is the challenge of ocr', 'start': 303.28, 'duration': 6.0}
+{'text': 'because what we also have is we have', 'start': 307.36, 'duration': 4.16}
+{'text': 'certain settings that we can use and for', 'start': 309.28, 'duration': 4.08}
+{'text': "this i'm going to copy", 'start': 311.52, 'duration': 3.76}
+{'text': 'and paste something that i have prepared', 'start': 313.36, 'duration': 4.24}
+{'text': 'here this is just information so here', 'start': 315.28, 'duration': 4.639}
+{'text': 'you can see the so-called page', 'start': 317.6, 'duration': 4.159}
+{'text': "segmentation modes and we're going to", 'start': 319.919, 'duration': 4.0}
+{'text': 'talk about them briefly in a second and', 'start': 321.759, 'duration': 5.361}
+{'text': 'we also have the so-called ocr engine', 'start': 323.919, 'duration': 5.521}
+{'text': 'modes that we can choose', 'start': 327.12, 'duration': 4.96}
+{'text': "so i'm not sure why", 'start': 329.44, 'duration': 3.599}
+{'text': 'here', 'start': 332.08, 'duration': 3.2}
+{'text': 'it is not green okay let me just add', 'start': 333.039, 'duration': 4.561}
+{'text': 'some comment here in the top', 'start': 335.28, 'duration': 4.24}
+{'text': 'so that we have', 'start': 337.6, 'duration': 4.24}
+{'text': 'this in green so here we have the page', 'start': 339.52, 'duration': 4.08}
+{'text': 'segmentation modes and here we have the', 'start': 341.84, 'duration': 4.48}
+{'text': 'ocr engine modes and we can combine', 'start': 343.6, 'duration': 4.319}
+{'text': 'these settings to', 'start': 346.32, 'duration': 3.68}
+{'text': 'get different results and how do we do', 'start': 347.919, 'duration': 4.321}
+{'text': 'that we basically call tesseract and', 'start': 350.0, 'duration': 4.0}
+{'text': 'then we specify', 'start': 352.24, 'duration': 3.76}
+{'text': 'the individual settings so i can do', 'start': 354.0, 'duration': 4.0}
+{'text': 'again the same thing and now i can say', 'start': 356.0, 'duration': 3.68}
+{'text': 'in the end', 'start': 358.0, 'duration': 5.039}
+{'text': 'dash dash and then psm which stands for', 'start': 359.68, 'duration': 6.079}
+{'text': 'page segmentation mode and a number from', 'start': 363.039, 'duration': 4.321}
+{'text': 'this list so', 'start': 365.759, 'duration': 3.361}
+{'text': "i'm not even sure what's the default to", 'start': 367.36, 'duration': 3.44}
+{'text': 'be honest but basically you can see what', 'start': 369.12, 'duration': 3.359}
+{'text': 'they do so 0', 'start': 370.8, 'duration': 3.839}
+{'text': 'says orientation and script detection', 'start': 372.479, 'duration': 4.641}
+{'text': 'osd only then we have for example', 'start': 374.639, 'duration': 4.801}
+{'text': 'something like assume a single uniform', 'start': 377.12, 'duration': 4.32}
+{'text': 'block of text this might be useful for', 'start': 379.44, 'duration': 3.599}
+{'text': 'an image like this', 'start': 381.44, 'duration': 3.92}
+{'text': "it doesn't make sense for an image like", 'start': 383.039, 'duration': 5.6}
+{'text': 'this because that is not a uniform', 'start': 385.36, 'duration': 5.119}
+{'text': "block of text that just doesn't make", 'start': 388.639, 'duration': 3.28}
+{'text': 'sense then we also have the same thing', 'start': 390.479, 'duration': 3.521}
+{'text': "for vertically align basically we're", 'start': 391.919, 'duration': 3.84}
+{'text': 'choosing a setting to say okay i give', 'start': 394.0, 'duration': 3.44}
+{'text': 'you this little hint that this image is', 'start': 395.759, 'duration': 4.0}
+{'text': 'basically just containing one uniform', 'start': 397.44, 'duration': 4.16}
+{'text': 'block of text and this makes it easier', 'start': 399.759, 'duration': 3.921}
+{'text': 'for the algorithm or for the process to', 'start': 401.6, 'duration': 5.68}
+{'text': 'be done in a in a good way and otherwise', 'start': 403.68, 'duration': 6.0}
+{'text': 'here we have for example automatic page', 'start': 407.28, 'duration': 4.56}
+{'text': 'segmentation', 'start': 409.68, 'duration': 3.04}
+{'text': 'uh', 'start': 411.84, 'duration': 2.88}
+{'text': 'find as much text as possible and nor', 'start': 412.72, 'duration': 4.72}
+{'text': 'protect no particular order this is also', 'start': 414.72, 'duration': 4.16}
+{'text': "possible maybe we're going to get better", 'start': 417.44, 'duration': 3.12}
+{'text': "results with that so let's apply to the", 'start': 418.88, 'duration': 6.08}
+{'text': 'logos again with psm11', 'start': 420.56, 'duration': 6.8}
+{'text': 'and you can see that we get a little bit', 'start': 424.96, 'duration': 4.32}
+{'text': 'more we can see vodafone here i think we', 'start': 427.36, 'duration': 3.92}
+{'text': "didn't have vodafone before", 'start': 429.28, 'duration': 4.319}
+{'text': 'right yes so it recognized something new', 'start': 431.28, 'duration': 5.359}
+{'text': 'here uh it just finds more and sometimes', 'start': 433.599, 'duration': 5.841}
+{'text': "it finds even stuff that's not there so", 'start': 436.639, 'duration': 4.56}
+{'text': "um that's of course the trade-off and", 'start': 439.44, 'duration': 3.199}
+{'text': 'this is just something i wanted to show', 'start': 441.199, 'duration': 2.56}
+{'text': "to you we're not gonna go through all", 'start': 442.639, 'duration': 3.28}
+{'text': 'the settings but we can choose these', 'start': 443.759, 'duration': 5.44}
+{'text': 'psms these page segmentation modes to', 'start': 445.919, 'duration': 5.28}
+{'text': 'get better results if we know something', 'start': 449.199, 'duration': 3.681}
+{'text': "for example if we know there's just one", 'start': 451.199, 'duration': 4.321}
+{'text': "single world uh word then we're going to", 'start': 452.88, 'duration': 4.48}
+{'text': 'get that maybe we can try this on the', 'start': 455.52, 'duration': 4.239}
+{'text': 'logos to see how it fails', 'start': 457.36, 'duration': 4.88}
+{'text': 'um there you go we got seats well', 'start': 459.759, 'duration': 4.88}
+{'text': "doesn't make a lot of sense but uh this", 'start': 462.24, 'duration': 3.84}
+{'text': 'is what you get from the different modes', 'start': 464.639, 'duration': 4.4}
+{'text': 'then we also have the ocr engine modes', 'start': 466.08, 'duration': 3.76}
+{'text': 'and', 'start': 469.039, 'duration': 3.201}
+{'text': 'here we basically decide what model is', 'start': 469.84, 'duration': 4.72}
+{'text': 'being used for example we can say', 'start': 472.24, 'duration': 3.2}
+{'text': 'uh', 'start': 474.56, 'duration': 2.96}
+{'text': "neural nets or legacy engine i'm not", 'start': 475.44, 'duration': 4.159}
+{'text': 'even sure what legacy engine means', 'start': 477.52, 'duration': 4.959}
+{'text': 'but lstm is long short-term memory uh', 'start': 479.599, 'duration': 5.201}
+{'text': 'basically a recurrent neural network you', 'start': 482.479, 'duration': 4.4}
+{'text': 'can choose the type of', 'start': 484.8, 'duration': 3.6}
+{'text': 'engine that we want to use and you can', 'start': 486.879, 'duration': 3.44}
+{'text': 'combine it if you want to use it you', 'start': 488.4, 'duration': 4.639}
+{'text': 'basically say addition in addition to', 'start': 490.319, 'duration': 6.641}
+{'text': 'psm or also without psm dash dash oem', 'start': 493.039, 'duration': 6.481}
+{'text': 'ocr engine mode and then zero to three', 'start': 496.96, 'duration': 5.44}
+{'text': 'so for example we can go with three', 'start': 499.52, 'duration': 5.679}
+{'text': 'we can go with two', 'start': 502.4, 'duration': 5.04}
+{'text': "couldn't load any languages okay this", 'start': 505.199, 'duration': 3.84}
+{'text': 'failed for some reason and this brings', 'start': 507.44, 'duration': 3.12}
+{'text': 'me also to the next point by the way we', 'start': 509.039, 'duration': 3.201}
+{'text': 'can also specify the language so i can', 'start': 510.56, 'duration': 3.2}
+{'text': 'say dash l', 'start': 512.24, 'duration': 5.84}
+{'text': 'and choose uh deu for german', 'start': 513.76, 'duration': 6.24}
+{'text': "and it's going to try to find like", 'start': 518.08, 'duration': 3.92}
+{'text': "german words but yeah doesn't really", 'start': 520.0, 'duration': 4.08}
+{'text': "make a lot of uh doesn't really make any", 'start': 522.0, 'duration': 3.76}
+{'text': 'difference in this case', 'start': 524.08, 'duration': 3.84}
+{'text': 'so those are the basic settings this is', 'start': 525.76, 'duration': 4.8}
+{'text': 'how you use tesseract by the way just', 'start': 527.92, 'duration': 4.56}
+{'text': 'one thing that i want to show you here', 'start': 530.56, 'duration': 4.56}
+{'text': 'as well you can use tesseract', 'start': 532.48, 'duration': 4.16}
+{'text': 'um', 'start': 535.12, 'duration': 3.839}
+{'text': 'neural deer there you go you can use', 'start': 536.64, 'duration': 4.879}
+{'text': 'tesseract also for', 'start': 538.959, 'duration': 4.161}
+{'text': 'saving into text files so we can say', 'start': 541.519, 'duration': 4.561}
+{'text': 'tesseract and then text.jpg and', 'start': 543.12, 'duration': 4.64}
+{'text': 'text.text', 'start': 546.08, 'duration': 3.68}
+{'text': 'so this is going to save the result into', 'start': 547.76, 'duration': 4.079}
+{'text': 'text dot text', 'start': 549.76, 'duration': 5.759}
+{'text': 'so we can open this up not here here and', 'start': 551.839, 'duration': 5.041}
+{'text': 'you can see that we have the result in a', 'start': 555.519, 'duration': 2.721}
+{'text': 'text file so this is how you use', 'start': 556.88, 'duration': 3.44}
+{'text': 'tesseract in the command line all right', 'start': 558.24, 'duration': 4.159}
+{'text': "now let's go ahead and do all of this in", 'start': 560.32, 'duration': 4.24}
+{'text': "python first of all we're going to", 'start': 562.399, 'duration': 5.041}
+{'text': 'import pi tesseract that we installed', 'start': 564.56, 'duration': 5.68}
+{'text': "before we're going to also import pill", 'start': 567.44, 'duration': 7.04}
+{'text': "dot image and we're going to import", 'start': 570.24, 'duration': 6.56}
+{'text': "cv2 now if you don't have these", 'start': 574.48, 'duration': 4.64}
+{'text': 'libraries you need to install via the', 'start': 576.8, 'duration': 4.4}
+{'text': 'command line', 'start': 579.12, 'duration': 5.12}
+{'text': 'uh pip install', 'start': 581.2, 'duration': 8.24}
+{'text': 'pillow and open cv dash python like that', 'start': 584.24, 'duration': 7.279}
+{'text': 'those are the two libraries here', 'start': 589.44, 'duration': 3.6}
+{'text': "and what we're going to do now is we're", 'start': 591.519, 'duration': 3.841}
+{'text': 'going to start by creating our config so', 'start': 593.04, 'duration': 4.64}
+{'text': "we're going to say my config equals and", 'start': 595.36, 'duration': 4.96}
+{'text': "then r and string and we're going to say", 'start': 597.68, 'duration': 5.599}
+{'text': 'dash dash psm and dash oem and now we', 'start': 600.32, 'duration': 4.8}
+{'text': 'can choose some numbers', 'start': 603.279, 'duration': 2.721}
+{'text': 'um', 'start': 605.12, 'duration': 2.719}
+{'text': "basically for the first image we're", 'start': 606.0, 'duration': 4.399}
+{'text': 'going to work with text.jpg and for this', 'start': 607.839, 'duration': 4.401}
+{'text': "we're going to", 'start': 610.399, 'duration': 5.761}
+{'text': 'assume a single uniform block of text so', 'start': 612.24, 'duration': 6.56}
+{'text': "we're going to choose 6 as the psm", 'start': 616.16, 'duration': 4.16}
+{'text': "and we're going to go with the default", 'start': 618.8, 'duration': 5.52}
+{'text': "oem 3 based on what's what is available", 'start': 620.32, 'duration': 6.8}
+{'text': 'this is our config and now we can use a', 'start': 624.32, 'duration': 4.88}
+{'text': 'simple function called image to string', 'start': 627.12, 'duration': 3.6}
+{'text': "to get the text so we're going to say", 'start': 629.2, 'duration': 3.199}
+{'text': 'text equals', 'start': 630.72, 'duration': 4.88}
+{'text': 'pi tesseract dot image to string and', 'start': 632.399, 'duration': 5.12}
+{'text': "we're going to pass here", 'start': 635.6, 'duration': 6.0}
+{'text': 'uh pill dot image', 'start': 637.519, 'duration': 5.841}
+{'text': 'dot open', 'start': 641.6, 'duration': 4.56}
+{'text': "and we're going to pass image dot", 'start': 643.36, 'duration': 4.719}
+{'text': 'actually not image text', 'start': 646.16, 'duration': 3.84}
+{'text': 'dot jpg', 'start': 648.079, 'duration': 4.081}
+{'text': 'and as a config', 'start': 650.0, 'duration': 5.68}
+{'text': "we're going to pass my config", 'start': 652.16, 'duration': 6.32}
+{'text': 'and then we can just print the text like', 'start': 655.68, 'duration': 5.44}
+{'text': 'this', 'start': 658.48, 'duration': 6.0}
+{'text': 'so this is enough and', 'start': 661.12, 'duration': 5.279}
+{'text': 'as a result you can see we get the text', 'start': 664.48, 'duration': 3.919}
+{'text': 'that is stored in the image that is part', 'start': 666.399, 'duration': 3.361}
+{'text': 'of the image', 'start': 668.399, 'duration': 3.201}
+{'text': "so that's a very simple thing and for", 'start': 669.76, 'duration': 4.639}
+{'text': 'text jpeg it works obviously very well', 'start': 671.6, 'duration': 4.28}
+{'text': 'we can go with', 'start': 674.399, 'duration': 4.241}
+{'text': 'logos.jpg now now for this probably we', 'start': 675.88, 'duration': 5.079}
+{'text': 'should change the config because', 'start': 678.64, 'duration': 4.48}
+{'text': "well it's not a single block of text", 'start': 680.959, 'duration': 4.161}
+{'text': 'still recognizes some of the names here', 'start': 683.12, 'duration': 3.12}
+{'text': 'but', 'start': 685.12, 'duration': 2.88}
+{'text': "which one would be the best let's see", 'start': 686.24, 'duration': 4.64}
+{'text': 'fully automatic page segmentation', 'start': 688.0, 'duration': 4.8}
+{'text': 'single column', 'start': 690.88, 'duration': 4.72}
+{'text': 'of text of variable sizes', 'start': 692.8, 'duration': 5.76}
+{'text': 'single single nothing single probably', 'start': 695.6, 'duration': 4.96}
+{'text': 'sparse text', 'start': 698.56, 'duration': 3.68}
+{'text': 'yeah i mean 11 we already tried this in', 'start': 700.56, 'duration': 3.839}
+{'text': 'the command line i think 11 is good i', 'start': 702.24, 'duration': 4.8}
+{'text': 'think 12 is good and i think', 'start': 704.399, 'duration': 4.56}
+{'text': 'uh these automatic things are good as', 'start': 707.04, 'duration': 4.96}
+{'text': 'well so we can try something like uh', 'start': 708.959, 'duration': 5.68}
+{'text': "let's try three i'm not sure three is", 'start': 712.0, 'duration': 6.48}
+{'text': 'going to work well we can try it', 'start': 714.639, 'duration': 5.281}
+{'text': "and we're probably going to get at least", 'start': 718.48, 'duration': 3.2}
+{'text': 'better results than before', 'start': 719.92, 'duration': 2.8}
+{'text': 'uh', 'start': 721.68, 'duration': 3.2}
+{'text': 'not the best but we got some pretty good', 'start': 722.72, 'duration': 4.48}
+{'text': 'we got microsoft paypal sony', 'start': 724.88, 'duration': 4.399}
+{'text': 'canon kenwood mobile', 'start': 727.2, 'duration': 4.72}
+{'text': 'boss oracle yahoo', 'start': 729.279, 'duration': 3.921}
+{'text': 'rolex', 'start': 731.92, 'duration': 4.32}
+{'text': "so let's try with", 'start': 733.2, 'duration': 5.04}
+{'text': 'two you can play around with that again', 'start': 736.24, 'duration': 3.52}
+{'text': 'this is just playing around you can you', 'start': 738.24, 'duration': 3.2}
+{'text': 'can try and see which one gives you the', 'start': 739.76, 'duration': 2.96}
+{'text': 'best results', 'start': 741.44, 'duration': 3.12}
+{'text': 'for what you try to do what do we have', 'start': 742.72, 'duration': 3.6}
+{'text': 'here we have a problem because this mode', 'start': 744.56, 'duration': 6.0}
+{'text': "is not supported i guess so let's try", 'start': 746.32, 'duration': 8.0}
+{'text': '11 again we already did this', 'start': 750.56, 'duration': 5.12}
+{'text': 'but yeah', 'start': 754.32, 'duration': 3.44}
+{'text': "so let's see", 'start': 755.68, 'duration': 3.92}
+{'text': 'there you go we can see a lot of text', 'start': 757.76, 'duration': 2.96}
+{'text': 'here', 'start': 759.6, 'duration': 2.88}
+{'text': "all right so let's try another image", 'start': 760.72, 'duration': 4.48}
+{'text': "let's try the signs basically here we", 'start': 762.48, 'duration': 4.72}
+{'text': 'have let me just see am i blocking', 'start': 765.2, 'duration': 4.16}
+{'text': 'anything no okay', 'start': 767.2, 'duration': 3.84}
+{'text': 'here we basically have street signs', 'start': 769.36, 'duration': 4.32}
+{'text': 'where we have village center width limit', 'start': 771.04, 'duration': 5.76}
+{'text': 'blandfords bettisbury whatever', 'start': 773.68, 'duration': 6.159}
+{'text': 'we want to see if our model or if our', 'start': 776.8, 'duration': 4.8}
+{'text': 'ocr is going to be able to do that so', 'start': 779.839, 'duration': 5.521}
+{'text': "we're going to say signs dot jpg and for", 'start': 781.6, 'duration': 6.56}
+{'text': "this we're going to try to find as", 'start': 785.36, 'duration': 5.12}
+{'text': 'much text as possible so the same', 'start': 788.16, 'duration': 4.479}
+{'text': "settings as before we're going to run", 'start': 790.48, 'duration': 4.08}
+{'text': 'this', 'start': 792.639, 'duration': 4.081}
+{'text': 'and what do we get', 'start': 794.56, 'duration': 4.64}
+{'text': 'we get center we get upton we got', 'start': 796.72, 'duration': 4.4}
+{'text': 'village we had spattersbury we got', 'start': 799.2, 'duration': 3.92}
+{'text': 'blandford', 'start': 801.12, 'duration': 2.8}
+{'text': 'a', 'start': 803.12, 'duration': 3.2}
+{'text': "bunch of different things yeah that's", 'start': 803.92, 'duration': 4.479}
+{'text': "basically it but we don't get everything", 'start': 806.32, 'duration': 4.4}
+{'text': "because for example we didn't get width", 'start': 808.399, 'duration': 4.321}
+{'text': 'even though it was part i think we also', 'start': 810.72, 'duration': 3.84}
+{'text': "didn't get limit", 'start': 812.72, 'duration': 3.76}
+{'text': "yeah so we didn't get everything there", 'start': 814.56, 'duration': 3.36}
+{'text': 'again we can play around with the', 'start': 816.48, 'duration': 3.52}
+{'text': 'different modes uh but this is how you', 'start': 817.92, 'duration': 5.2}
+{'text': 'turn basic images uh or how you extract', 'start': 820.0, 'duration': 5.519}
+{'text': 'basic strings from images', 'start': 823.12, 'duration': 4.159}
+{'text': 'now what we can also do here is we can', 'start': 825.519, 'duration': 4.0}
+{'text': 'plot rectangles around the recognized', 'start': 827.279, 'duration': 3.68}
+{'text': 'characters so we can see which', 'start': 829.519, 'duration': 4.0}
+{'text': 'characters are recognized by the ocr and', 'start': 830.959, 'duration': 4.481}
+{'text': "which are not and for this we're going", 'start': 833.519, 'duration': 3.44}
+{'text': 'to have to change', 'start': 835.44, 'duration': 3.12}
+{'text': "uh the approach a little bit so we're", 'start': 836.959, 'duration': 4.401}
+{'text': 'going to say image equals cv to imread', 'start': 838.56, 'duration': 4.639}
+{'text': "so we're going to use opencv instead of", 'start': 841.36, 'duration': 3.599}
+{'text': "pillow because we're going to draw the", 'start': 843.199, 'duration': 3.521}
+{'text': "rectangles with opencv and we're going", 'start': 844.959, 'duration': 3.68}
+{'text': 'to pass the file name', 'start': 846.72, 'duration': 3.6}
+{'text': "uh let's start with a simple one", 'start': 848.639, 'duration': 3.2}
+{'text': 'text.jpg', 'start': 850.32, 'duration': 3.68}
+{'text': "and then we're going to basically just", 'start': 851.839, 'duration': 4.0}
+{'text': "extract the shape so we're going to say", 'start': 854.0, 'duration': 3.839}
+{'text': 'shape uh height', 'start': 855.839, 'duration': 3.921}
+{'text': 'uh width and', 'start': 857.839, 'duration': 4.481}
+{'text': 'channels equals', 'start': 859.76, 'duration': 3.92}
+{'text': 'cv2', 'start': 862.32, 'duration': 3.28}
+{'text': 'or actually image', 'start': 863.68, 'duration': 4.08}
+{'text': "dot shape now i'm not even sure if we're", 'start': 865.6, 'duration': 3.84}
+{'text': "going to need channels so let's turn", 'start': 867.76, 'duration': 3.439}
+{'text': 'this into an underscore because i think', 'start': 869.44, 'duration': 3.68}
+{'text': "it's just a return value that we don't", 'start': 871.199, 'duration': 2.801}
+{'text': 'need', 'start': 873.12, 'duration': 2.159}
+{'text': "even though i'm not sure about that", 'start': 874.0, 'duration': 2.56}
+{'text': "we're going to see", 'start': 875.279, 'duration': 2.321}
+{'text': 'later on', 'start': 876.56, 'duration': 3.04}
+{'text': 'um', 'start': 877.6, 'duration': 3.84}
+{'text': 'yeah so basically we get the height the', 'start': 879.6, 'duration': 3.28}
+{'text': "width of the image and then we're going", 'start': 881.44, 'duration': 3.68}
+{'text': 'to convert this image to boxes using pi', 'start': 882.88, 'duration': 4.0}
+{'text': "tesseract so we're going to say boxes", 'start': 885.12, 'duration': 2.8}
+{'text': 'equals', 'start': 886.88, 'duration': 3.44}
+{'text': "pi tesseract dot image to boxes we're", 'start': 887.92, 'duration': 5.12}
+{'text': 'going to pass the image and the config', 'start': 890.32, 'duration': 4.879}
+{'text': "myconfig and let's look at the result to", 'start': 893.04, 'duration': 4.08}
+{'text': "see what we're actually working with so", 'start': 895.199, 'duration': 5.281}
+{'text': "we have boxes let's run this", 'start': 897.12, 'duration': 6.079}
+{'text': "and what you're going to see", 'start': 900.48, 'duration': 4.32}
+{'text': 'is that we have', 'start': 903.199, 'duration': 4.08}
+{'text': "these individual boxes here so let's", 'start': 904.8, 'duration': 4.88}
+{'text': 'scroll up quite a lot of boxes we have', 'start': 907.279, 'duration': 4.641}
+{'text': 'the individual characters and we have', 'start': 909.68, 'duration': 4.24}
+{'text': 'the coordinates so those coordinates are', 'start': 911.92, 'duration': 3.12}
+{'text': 'basically', 'start': 913.92, 'duration': 3.68}
+{'text': 'uh the rectangle coordinates so we have', 'start': 915.04, 'duration': 3.599}
+{'text': 'the', 'start': 917.6, 'duration': 3.28}
+{'text': 'uh upper left corner and the lower right', 'start': 918.639, 'duration': 4.081}
+{'text': "corner i don't know what the last", 'start': 920.88, 'duration': 3.92}
+{'text': 'parameters to be honest', 'start': 922.72, 'duration': 4.32}
+{'text': "so we're going to ignore it anyways we", 'start': 924.8, 'duration': 3.76}
+{'text': "don't really need it", 'start': 927.04, 'duration': 2.96}
+{'text': "and what we're going to do now is we're", 'start': 928.56, 'duration': 5.44}
+{'text': 'going to see four box in boxes dot split', 'start': 930.0, 'duration': 6.48}
+{'text': 'lines so we have', 'start': 934.0, 'duration': 3.759}
+{'text': 'split', 'start': 936.48, 'duration': 4.0}
+{'text': 'lines so we have the individual', 'start': 937.759, 'duration': 5.041}
+{'text': "uh characters as a separate box we're", 'start': 940.48, 'duration': 3.52}
+{'text': 'going to say', 'start': 942.8, 'duration': 5.12}
+{'text': 'box equals box dot split on', 'start': 944.0, 'duration': 6.079}
+{'text': 'spaces on white spaces', 'start': 947.92, 'duration': 4.96}
+{'text': "and then we're going to say cb2", 'start': 950.079, 'duration': 6.721}
+{'text': 'or actually image equals cb2', 'start': 952.88, 'duration': 7.199}
+{'text': 'dot rectangle', 'start': 956.8, 'duration': 3.279}
+{'text': "we're going to pass image and then we're", 'start': 960.399, 'duration': 3.36}
+{'text': 'going to pass here', 'start': 962.079, 'duration': 3.601}
+{'text': 'uh for direct angle function we need to', 'start': 963.759, 'duration': 4.32}
+{'text': 'pass point 1.2 which means upper left', 'start': 965.68, 'duration': 4.399}
+{'text': "corner lower right corner and that's", 'start': 968.079, 'duration': 3.76}
+{'text': 'going to draw a rectangle and here we', 'start': 970.079, 'duration': 4.32}
+{'text': 'need to have integer of', 'start': 971.839, 'duration': 5.36}
+{'text': 'box 1 not 0 because 0 is the actual', 'start': 974.399, 'duration': 3.841}
+{'text': 'letter', 'start': 977.199, 'duration': 2.08}
+{'text': 'and', 'start': 978.24, 'duration': 2.599}
+{'text': 'then', 'start': 979.279, 'duration': 5.281}
+{'text': 'um height minus', 'start': 980.839, 'duration': 5.961}
+{'text': 'integer of box two because the height is', 'start': 984.56, 'duration': 4.079}
+{'text': 'inverted', 'start': 986.8, 'duration': 2.8}
+{'text': 'and', 'start': 988.639, 'duration': 4.64}
+{'text': "then we're going to pass also", 'start': 989.6, 'duration': 4.479}
+{'text': 'the', 'start': 993.279, 'duration': 2.081}
+{'text': 'integer', 'start': 994.079, 'duration': 2.641}
+{'text': 'off', 'start': 995.36, 'duration': 2.8}
+{'text': 'box', 'start': 996.72, 'duration': 3.84}
+{'text': 'three', 'start': 998.16, 'duration': 2.4}
+{'text': 'and', 'start': 1000.8, 'duration': 2.32}
+{'text': 'height', 'start': 1002.079, 'duration': 3.041}
+{'text': 'minus integer', 'start': 1003.12, 'duration': 4.639}
+{'text': 'of box', 'start': 1005.12, 'duration': 5.12}
+{'text': 'four then we also need to pass a color', 'start': 1007.759, 'duration': 4.161}
+{'text': "uh keep in mind here that we're working", 'start': 1010.24, 'duration': 4.399}
+{'text': 'with a bgr color scheme in opencv not', 'start': 1011.92, 'duration': 4.88}
+{'text': "with an rgb so it's not red green blue", 'start': 1014.639, 'duration': 5.281}
+{'text': "it's blue green red so if you pass 255 0", 'start': 1016.8, 'duration': 5.36}
+{'text': "0 you're going to get blue and not red", 'start': 1019.92, 'duration': 4.8}
+{'text': "but we're going to pass 0 to 55 0 which", 'start': 1022.16, 'duration': 3.84}
+{'text': "doesn't really matter because it's in", 'start': 1024.72, 'duration': 3.119}
+{'text': "the middle so it's green", 'start': 1026.0, 'duration': 3.919}
+{'text': "and then we're going to pass 2 in the", 'start': 1027.839, 'duration': 4.96}
+{'text': "end and we're going to display this", 'start': 1029.919, 'duration': 5.76}
+{'text': 'cb2 in show', 'start': 1032.799, 'duration': 4.4}
+{'text': 'image image', 'start': 1035.679, 'duration': 3.36}
+{'text': "so this string can be chosen it's just a", 'start': 1037.199, 'duration': 3.921}
+{'text': "title doesn't matter how you name it and", 'start': 1039.039, 'duration': 5.201}
+{'text': 'then cv2 weight key', 'start': 1041.12, 'duration': 5.04}
+{'text': 'delay of zero', 'start': 1044.24, 'duration': 4.079}
+{'text': 'so if we run this we should be able to', 'start': 1046.16, 'duration': 3.92}
+{'text': 'see', 'start': 1048.319, 'duration': 3.681}
+{'text': 'the boxes there you go you can see the', 'start': 1050.08, 'duration': 3.52}
+{'text': 'image and the boxes around the', 'start': 1052.0, 'duration': 4.48}
+{'text': 'recognized characters now i think', 'start': 1053.6, 'duration': 4.079}
+{'text': 'that', 'start': 1056.48, 'duration': 3.439}
+{'text': 'uh', 'start': 1057.679, 'duration': 2.24}
+{'text': 'this here is not actually a character is', 'start': 1060.559, 'duration': 3.201}
+{'text': 'it', 'start': 1062.48, 'duration': 2.8}
+{'text': "let's see", 'start': 1063.76, 'duration': 4.32}
+{'text': "where's the text", 'start': 1065.28, 'duration': 2.8}
+{'text': 'uh where was this actually', 'start': 1069.28, 'duration': 3.519}
+{'text': "or was it l i yeah then it's yeah it's l", 'start': 1072.88, 'duration': 3.6}
+{'text': 'i', 'start': 1075.76, 'duration': 3.12}
+{'text': 'just plotted above the characters okay', 'start': 1076.48, 'duration': 4.88}
+{'text': 'so this works very simply or', 'start': 1078.88, 'duration': 4.4}
+{'text': 'very easily for', 'start': 1081.36, 'duration': 3.76}
+{'text': "this particular image now let's apply it", 'start': 1083.28, 'duration': 5.279}
+{'text': 'to logos to see what it recognizes there', 'start': 1085.12, 'duration': 5.6}
+{'text': "and we're going to see that it's not as", 'start': 1088.559, 'duration': 3.12}
+{'text': 'good', 'start': 1090.72, 'duration': 2.8}
+{'text': 'as on the other image but it still', 'start': 1091.679, 'duration': 4.321}
+{'text': 'recognizes quite a lot so it sees okay', 'start': 1093.52, 'duration': 4.96}
+{'text': 'um this is recognized as two characters', 'start': 1096.0, 'duration': 5.6}
+{'text': 'so we see b and c but not really the i', 'start': 1098.48, 'duration': 5.04}
+{'text': 'uh this is recognized as a character we', 'start': 1101.6, 'duration': 3.84}
+{'text': 'can see mastercard being recognized as', 'start': 1103.52, 'duration': 4.399}
+{'text': 'two characters samsung asks one', 'start': 1105.44, 'duration': 4.479}
+{'text': 'character and maybe a lambda in here or', 'start': 1107.919, 'duration': 3.681}
+{'text': 'an s', 'start': 1109.919, 'duration': 4.401}
+{'text': 'we can see that sony works paypal works', 'start': 1111.6, 'duration': 4.72}
+{'text': 'microsoft bosch works', 'start': 1114.32, 'duration': 4.56}
+{'text': 'uh yahoo works and so on so', 'start': 1116.32, 'duration': 4.239}
+{'text': 'partly it works probably not and now', 'start': 1118.88, 'duration': 4.24}
+{'text': "let's go to the actual", 'start': 1120.559, 'duration': 5.041}
+{'text': 'signs', 'start': 1123.12, 'duration': 4.559}
+{'text': "and we're going to see that", 'start': 1125.6, 'duration': 4.72}
+{'text': "there it doesn't work very well", 'start': 1127.679, 'duration': 4.721}
+{'text': 'at least it skips a lot or it finds a', 'start': 1130.32, 'duration': 4.4}
+{'text': 'lot that is not actually a character so', 'start': 1132.4, 'duration': 4.24}
+{'text': 'these two things are recognized this one', 'start': 1134.72, 'duration': 3.52}
+{'text': "is recognized i don't understand why", 'start': 1136.64, 'duration': 3.44}
+{'text': 'this one is not recognized', 'start': 1138.24, 'duration': 3.76}
+{'text': 'those two words here are also not', 'start': 1140.08, 'duration': 3.76}
+{'text': 'recognized but but', 'start': 1142.0, 'duration': 5.44}
+{'text': 'uh we see here that a bunch of', 'start': 1143.84, 'duration': 6.16}
+{'text': 'leaves and a bunch of', 'start': 1147.44, 'duration': 5.28}
+{'text': 'trees are recognized as characters so', 'start': 1150.0, 'duration': 4.16}
+{'text': 'this is not optimal and of course you', 'start': 1152.72, 'duration': 3.44}
+{'text': "can also let's go back to logos you can", 'start': 1154.16, 'duration': 4.08}
+{'text': 'also see how the results change', 'start': 1156.16, 'duration': 4.08}
+{'text': "if you change the mode so let's say we", 'start': 1158.24, 'duration': 3.439}
+{'text': 'assume', 'start': 1160.24, 'duration': 4.72}
+{'text': "um well let's change 11 to something", 'start': 1161.679, 'duration': 6.401}
+{'text': 'like 2 or something like 3 for example', 'start': 1164.96, 'duration': 5.28}
+{'text': "let's change it to 3.", 'start': 1168.08, 'duration': 3.839}
+{'text': "we're going to see that the results are", 'start': 1170.24, 'duration': 4.559}
+{'text': 'quite different there', 'start': 1171.919, 'duration': 2.88}
+{'text': 'maybe not for 3 and 11 oh actually this', 'start': 1175.44, 'duration': 4.64}
+{'text': 'looks a little bit better', 'start': 1178.16, 'duration': 3.84}
+{'text': 'yeah this actually looks way better than', 'start': 1180.08, 'duration': 2.959}
+{'text': 'just', 'start': 1182.0, 'duration': 3.2}
+{'text': 'using 11 but if we now say okay we', 'start': 1183.039, 'duration': 3.921}
+{'text': 'assume a', 'start': 1185.2, 'duration': 4.4}
+{'text': "uh a uniform block of text so let's go", 'start': 1186.96, 'duration': 4.16}
+{'text': 'with six', 'start': 1189.6, 'duration': 3.439}
+{'text': 'this is not going to work very well with', 'start': 1191.12, 'duration': 3.76}
+{'text': "the logos because it's not a uniform", 'start': 1193.039, 'duration': 3.681}
+{'text': 'block of text obviously', 'start': 1194.88, 'duration': 3.36}
+{'text': 'but actually it still works quite good', 'start': 1196.72, 'duration': 3.199}
+{'text': "so let's let's pick the worst option", 'start': 1198.24, 'duration': 4.16}
+{'text': "let's say it's a single word", 'start': 1199.919, 'duration': 4.801}
+{'text': "so let's change this to 8 and then we're", 'start': 1202.4, 'duration': 4.24}
+{'text': 'probably going to see very bad results', 'start': 1204.72, 'duration': 3.6}
+{'text': 'hopefully', 'start': 1206.64, 'duration': 3.6}
+{'text': 'uh yeah there you go so if it thinks', 'start': 1208.32, 'duration': 3.839}
+{'text': 'that all this is a single word you can', 'start': 1210.24, 'duration': 5.2}
+{'text': 'see that the boxes are also uh not very', 'start': 1212.159, 'duration': 6.481}
+{'text': "well placed so let's go back to 11", 'start': 1215.44, 'duration': 4.239}
+{'text': 'and', 'start': 1218.64, 'duration': 4.0}
+{'text': 'uh what we can now do as well is we can', 'start': 1219.679, 'duration': 5.601}
+{'text': 'go ahead and not only plot boxes around', 'start': 1222.64, 'duration': 4.88}
+{'text': 'individual characters but around', 'start': 1225.28, 'duration': 4.56}
+{'text': 'individual words so we want to say okay', 'start': 1227.52, 'duration': 4.96}
+{'text': 'uh obviously if we go to logos we will', 'start': 1229.84, 'duration': 5.199}
+{'text': 'see that certain characters belong', 'start': 1232.48, 'duration': 4.8}
+{'text': 'together so ebay will not be recognized', 'start': 1235.039, 'duration': 5.76}
+{'text': 'as e b a and y it will be recognized as', 'start': 1237.28, 'duration': 6.639}
+{'text': 'one block and thus as ebay', 'start': 1240.799, 'duration': 5.041}
+{'text': 'and because of that we want to plot', 'start': 1243.919, 'duration': 4.321}
+{'text': 'boxes around the individual words not', 'start': 1245.84, 'duration': 4.8}
+{'text': 'just the individual characters', 'start': 1248.24, 'duration': 4.0}
+{'text': "now for this what we're going to do is", 'start': 1250.64, 'duration': 4.24}
+{'text': "we're going to remove all of this here", 'start': 1252.24, 'duration': 5.52}
+{'text': 'and i think we can keep this', 'start': 1254.88, 'duration': 5.2}
+{'text': 'cv2 in read stuff', 'start': 1257.76, 'duration': 4.24}
+{'text': "uh yeah this should work and then we're", 'start': 1260.08, 'duration': 3.44}
+{'text': "going to use a different function we're", 'start': 1262.0, 'duration': 4.159}
+{'text': 'going to use the function image to data', 'start': 1263.52, 'duration': 5.039}
+{'text': 'so data is going to be pi tesseract', 'start': 1266.159, 'duration': 3.52}
+{'text': 'image', 'start': 1268.559, 'duration': 3.201}
+{'text': "to data and we're going to pass the", 'start': 1269.679, 'duration': 4.401}
+{'text': "image we're going to pass the config and", 'start': 1271.76, 'duration': 4.24}
+{'text': "we're going to pass an output type and", 'start': 1274.08, 'duration': 3.36}
+{'text': "for this we're going to", 'start': 1276.0, 'duration': 3.12}
+{'text': "have to import something we're going to", 'start': 1277.44, 'duration': 4.8}
+{'text': 'have to import from pi tesseract', 'start': 1279.12, 'duration': 5.919}
+{'text': 'import output', 'start': 1282.24, 'duration': 4.799}
+{'text': "and we're going to choose", 'start': 1285.039, 'duration': 4.081}
+{'text': 'output dot and here you can see we can', 'start': 1287.039, 'duration': 3.841}
+{'text': 'choose data frame', 'start': 1289.12, 'duration': 4.08}
+{'text': 'which is i think a pandas data frame we', 'start': 1290.88, 'duration': 4.56}
+{'text': 'can choose dictionary we can choose', 'start': 1293.2, 'duration': 3.839}
+{'text': "bytes string whatever we're going to go", 'start': 1295.44, 'duration': 4.56}
+{'text': "with a dictionary for today's video", 'start': 1297.039, 'duration': 4.081}
+{'text': 'and', 'start': 1300.0, 'duration': 2.96}
+{'text': "then we're going to print", 'start': 1301.12, 'duration': 4.16}
+{'text': 'the data', 'start': 1302.96, 'duration': 5.12}
+{'text': 'in order to see what we have in there', 'start': 1305.28, 'duration': 4.8}
+{'text': "actually let's just", 'start': 1308.08, 'duration': 4.24}
+{'text': "comment this out so we don't see", 'start': 1310.08, 'duration': 4.64}
+{'text': 'anything', 'start': 1312.32, 'duration': 2.4}
+{'text': 'and you can see here we have a level and', 'start': 1315.6, 'duration': 4.16}
+{'text': 'we have a bunch of values and then a', 'start': 1317.919, 'duration': 3.361}
+{'text': 'bunch of more stuff so maybe we should', 'start': 1319.76, 'duration': 3.36}
+{'text': 'print the keys to see what we have in', 'start': 1321.28, 'duration': 4.08}
+{'text': 'here', 'start': 1323.12, 'duration': 2.24}
+{'text': 'so the key should give us information', 'start': 1328.32, 'duration': 3.28}
+{'text': 'about what we can actually extract we', 'start': 1330.0, 'duration': 4.96}
+{'text': 'have level page number num parnum line', 'start': 1331.6, 'duration': 6.24}
+{'text': 'num word num left top width height conf', 'start': 1334.96, 'duration': 5.36}
+{'text': 'text confis confidence text is the', 'start': 1337.84, 'duration': 3.839}
+{'text': 'actual text', 'start': 1340.32, 'duration': 3.2}
+{'text': 'and i think those are the things that we', 'start': 1341.679, 'duration': 4.961}
+{'text': 'need for the plotting of the boxes', 'start': 1343.52, 'duration': 5.279}
+{'text': "so let's go ahead and see what we have", 'start': 1346.64, 'duration': 3.36}
+{'text': 'in data', 'start': 1348.799, 'duration': 3.601}
+{'text': 'text', 'start': 1350.0, 'duration': 4.32}
+{'text': 'so that we see how this library actually', 'start': 1352.4, 'duration': 4.24}
+{'text': 'works', 'start': 1354.32, 'duration': 2.32}
+{'text': 'and', 'start': 1357.039, 'duration': 3.12}
+{'text': 'there you go you see all the recognized', 'start': 1357.919, 'duration': 4.88}
+{'text': "words okay that's interesting", 'start': 1360.159, 'duration': 3.841}
+{'text': "so what we're going to do now is we're", 'start': 1362.799, 'duration': 3.521}
+{'text': 'going to say', 'start': 1364.0, 'duration': 6.559}
+{'text': "uh for or actually let's say amount", 'start': 1366.32, 'duration': 7.28}
+{'text': 'amount of boxes is going to be', 'start': 1370.559, 'duration': 4.961}
+{'text': 'length', 'start': 1373.6, 'duration': 5.04}
+{'text': 'of data text', 'start': 1375.52, 'duration': 5.6}
+{'text': "and then we're going to say for i in", 'start': 1378.64, 'duration': 6.24}
+{'text': 'range amount boxes', 'start': 1381.12, 'duration': 3.76}
+{'text': "and we're going to say if the float", 'start': 1384.96, 'duration': 6.32}
+{'text': 'version of data confidence so if the', 'start': 1389.039, 'duration': 4.961}
+{'text': 'confidence is above a certain threshold', 'start': 1391.28, 'duration': 5.44}
+{'text': "so let's say 80 for example", 'start': 1394.0, 'duration': 4.64}
+{'text': 'which is a confidence of 80 percent if', 'start': 1396.72, 'duration': 3.68}
+{'text': "the confidence is as high then we're", 'start': 1398.64, 'duration': 3.519}
+{'text': 'going to plot a box because otherwise if', 'start': 1400.4, 'duration': 3.279}
+{'text': "we set the confidence too low it's just", 'start': 1402.159, 'duration': 3.841}
+{'text': 'going to plot boxes everywhere', 'start': 1403.679, 'duration': 3.841}
+{'text': "so we're going to say if the confidence", 'start': 1406.0, 'duration': 4.24}
+{'text': "that this is a word is above 80 we're", 'start': 1407.52, 'duration': 4.88}
+{'text': 'going to say', 'start': 1410.24, 'duration': 4.24}
+{'text': 'x y', 'start': 1412.4, 'duration': 3.2}
+{'text': 'width', 'start': 1414.48, 'duration': 3.92}
+{'text': 'and height', 'start': 1415.6, 'duration': 2.8}
+{'text': 'are going to be data left', 'start': 1418.88, 'duration': 5.76}
+{'text': "data actually let's turn this into a", 'start': 1422.72, 'duration': 4.079}
+{'text': 'tuple', 'start': 1424.64, 'duration': 4.0}
+{'text': 'data', 'start': 1426.799, 'duration': 3.521}
+{'text': 'top', 'start': 1428.64, 'duration': 4.24}
+{'text': 'and of course we want to do this for', 'start': 1430.32, 'duration': 4.719}
+{'text': 'each instance so we need to provide i as', 'start': 1432.88, 'duration': 3.12}
+{'text': 'well', 'start': 1435.039, 'duration': 2.801}
+{'text': 'here as an index', 'start': 1436.0, 'duration': 3.36}
+{'text': 'then data', 'start': 1437.84, 'duration': 3.76}
+{'text': 'what was it with', 'start': 1439.36, 'duration': 5.6}
+{'text': 'i and data', 'start': 1441.6, 'duration': 4.8}
+{'text': 'height', 'start': 1444.96, 'duration': 2.4}
+{'text': 'i', 'start': 1446.4, 'duration': 3.519}
+{'text': "so we're basically getting the top left", 'start': 1447.36, 'duration': 4.16}
+{'text': 'corner of the rectangle and then the', 'start': 1449.919, 'duration': 3.521}
+{'text': 'size and this is enough of course to', 'start': 1451.52, 'duration': 3.039}
+{'text': 'derive', 'start': 1453.44, 'duration': 3.599}
+{'text': 'the rectangle itself', 'start': 1454.559, 'duration': 4.881}
+{'text': "and because of that we're going to go", 'start': 1457.039, 'duration': 5.281}
+{'text': 'into the next line and say image equals', 'start': 1459.44, 'duration': 5.68}
+{'text': 'cv2 dot rectangle', 'start': 1462.32, 'duration': 4.88}
+{'text': "we're going to plot on to the image and", 'start': 1465.12, 'duration': 4.559}
+{'text': 'the rectangle is going to start at x y', 'start': 1467.2, 'duration': 5.68}
+{'text': 'and the lower right point is going to be', 'start': 1469.679, 'duration': 5.36}
+{'text': 'x plus the width', 'start': 1472.88, 'duration': 3.36}
+{'text': 'and y', 'start': 1475.039, 'duration': 4.321}
+{'text': 'plus the height', 'start': 1476.24, 'duration': 5.039}
+{'text': "and of course don't forget the bgr color", 'start': 1479.36, 'duration': 3.28}
+{'text': 'scheme again', 'start': 1481.279, 'duration': 3.201}
+{'text': '255', 'start': 1482.64, 'duration': 4.96}
+{'text': 'for green and then two again', 'start': 1484.48, 'duration': 4.48}
+{'text': "and then what we're also going to do is", 'start': 1487.6, 'duration': 3.04}
+{'text': "we're going to put the text", 'start': 1488.96, 'duration': 4.48}
+{'text': 'off the images or the recognized text', 'start': 1490.64, 'duration': 5.68}
+{'text': 'below the boxes now we can do it without', 'start': 1493.44, 'duration': 5.2}
+{'text': 'as well so then you will already see the', 'start': 1496.32, 'duration': 4.16}
+{'text': 'boxes around the text', 'start': 1498.64, 'duration': 3.76}
+{'text': 'so if we run this we will already see', 'start': 1500.48, 'duration': 3.92}
+{'text': "the result at least if we didn't make", 'start': 1502.4, 'duration': 4.879}
+{'text': 'any mistakes of course we did some', 'start': 1504.4, 'duration': 4.879}
+{'text': 'float argument must be a string or a', 'start': 1507.279, 'duration': 4.561}
+{'text': 'number not a list', 'start': 1509.279, 'duration': 5.52}
+{'text': 'uh i think we need to add an i here', 'start': 1511.84, 'duration': 4.8}
+{'text': 'right', 'start': 1514.799, 'duration': 4.321}
+{'text': 'there you go', 'start': 1516.64, 'duration': 2.48}
+{'text': 'there you go so now you can see the', 'start': 1523.2, 'duration': 4.0}
+{'text': 'recognized words paypal sony hp ebay', 'start': 1524.559, 'duration': 6.161}
+{'text': 'microsoft bosch oracle boss philips ck', 'start': 1527.2, 'duration': 5.44}
+{'text': 'canon and so on', 'start': 1530.72, 'duration': 3.76}
+{'text': "but we don't see what the actual", 'start': 1532.64, 'duration': 4.08}
+{'text': 'recognized text is because maybe it', 'start': 1534.48, 'duration': 4.559}
+{'text': 'makes some mistakes maybe it says ck is', 'start': 1536.72, 'duration': 4.64}
+{'text': 'a word but i see okay', 'start': 1539.039, 'duration': 4.721}
+{'text': 'so in order to see what it actually does', 'start': 1541.36, 'duration': 6.0}
+{'text': "we're going to say cv2 dot put text", 'start': 1543.76, 'duration': 5.6}
+{'text': "onto the image we're going to put the", 'start': 1547.36, 'duration': 4.799}
+{'text': 'text which is data text we saw in the', 'start': 1549.36, 'duration': 4.72}
+{'text': 'keys that we have this text', 'start': 1552.159, 'duration': 4.4}
+{'text': "uh key and we're going to", 'start': 1554.08, 'duration': 3.76}
+{'text': 'pick of course', 'start': 1556.559, 'duration': 2.961}
+{'text': 'the ith one', 'start': 1557.84, 'duration': 4.24}
+{'text': "and we're going to place this text below", 'start': 1559.52, 'duration': 5.279}
+{'text': "the box so we're going to place it at x", 'start': 1562.08, 'duration': 5.76}
+{'text': 'and y plus height', 'start': 1564.799, 'duration': 6.0}
+{'text': 'plus a little bit more 20 for example', 'start': 1567.84, 'duration': 6.079}
+{'text': "we're going to choose the font cv2 dot", 'start': 1570.799, 'duration': 4.721}
+{'text': 'font', 'start': 1573.919, 'duration': 4.081}
+{'text': 'uh hershey simplex', 'start': 1575.52, 'duration': 6.8}
+{'text': "we're going to pick a scale of 0.7", 'start': 1578.0, 'duration': 5.44}
+{'text': "so we're going to make it a little bit", 'start': 1582.32, 'duration': 3.12}
+{'text': "smaller than the default we're going to", 'start': 1583.44, 'duration': 6.4}
+{'text': 'pick as a color 0 255 0.', 'start': 1585.44, 'duration': 7.839}
+{'text': "we're going to pick 2 as a thickness and", 'start': 1589.84, 'duration': 5.68}
+{'text': "we're going to pick the last parameters", 'start': 1593.279, 'duration': 4.801}
+{'text': 'which i forgot what it actually is for i', 'start': 1595.52, 'duration': 4.88}
+{'text': "think it's optional but i chose in my", 'start': 1598.08, 'duration': 5.68}
+{'text': 'prepared code line a8', 'start': 1600.4, 'duration': 4.159}
+{'text': 'so', 'start': 1603.76, 'duration': 2.48}
+{'text': 'that should be actually enough', 'start': 1604.559, 'duration': 3.681}
+{'text': 'and we can run this', 'start': 1606.24, 'duration': 4.48}
+{'text': "hopefully i didn't block anything", 'start': 1608.24, 'duration': 4.16}
+{'text': "i don't think so", 'start': 1610.72, 'duration': 3.6}
+{'text': 'um but there you can see now what it', 'start': 1612.4, 'duration': 4.32}
+{'text': 'actually recognizes philips ck bosch', 'start': 1614.32, 'duration': 5.599}
+{'text': 'microsoft paypal sony ebay uh here it', 'start': 1616.72, 'duration': 6.16}
+{'text': "recognized i don't know what this is oh", 'start': 1619.919, 'duration': 4.721}
+{'text': "or i don't know what it is", 'start': 1622.88, 'duration': 4.399}
+{'text': 'canon mobile question mark for burger', 'start': 1624.64, 'duration': 3.519}
+{'text': 'king', 'start': 1627.279, 'duration': 4.241}
+{'text': "uh gw for cnn which is you know i can't", 'start': 1628.159, 'duration': 5.841}
+{'text': 'understand this this could also be a w', 'start': 1631.52, 'duration': 4.639}
+{'text': 'uh yeah so you can see what it actually', 'start': 1634.0, 'duration': 3.52}
+{'text': 'does', 'start': 1636.159, 'duration': 3.52}
+{'text': 'now in the case that i', 'start': 1637.52, 'duration': 4.399}
+{'text': 'blocked the code this is the code let me', 'start': 1639.679, 'duration': 4.24}
+{'text': "just close this this is the code we're", 'start': 1641.919, 'duration': 4.081}
+{'text': 'basically plotting a rectangle', 'start': 1643.919, 'duration': 4.48}
+{'text': "and we're putting a text", 'start': 1646.0, 'duration': 5.6}
+{'text': "onto uh or below the box so let's swap", 'start': 1648.399, 'duration': 6.16}
+{'text': "the image let's go with the signs to see", 'start': 1651.6, 'duration': 5.12}
+{'text': 'if it works as well', 'start': 1654.559, 'duration': 4.881}
+{'text': "let's run this", 'start': 1656.72, 'duration': 2.72}
+{'text': 'and you see blandford spattersbury upton', 'start': 1661.76, 'duration': 5.36}
+{'text': 'village center', 'start': 1665.6, 'duration': 3.76}
+{'text': 'then it says la in the trees here i mean', 'start': 1667.12, 'duration': 4.88}
+{'text': 'this could be la if you', 'start': 1669.36, 'duration': 5.12}
+{'text': 'uh have a good imagination and of course', 'start': 1672.0, 'duration': 4.08}
+{'text': 'we can also lower the confidence so we', 'start': 1674.48, 'duration': 3.439}
+{'text': 'can say okay if you are', 'start': 1676.08, 'duration': 4.719}
+{'text': 'uh more than 20 confident then show me', 'start': 1677.919, 'duration': 4.321}
+{'text': "more and maybe we're going to get more", 'start': 1680.799, 'duration': 3.201}
+{'text': 'text based on that', 'start': 1682.24, 'duration': 4.6}
+{'text': 'um and you can see we get a lot more', 'start': 1684.0, 'duration': 4.88}
+{'text': 'misclassifications but not really', 'start': 1686.84, 'duration': 4.199}
+{'text': "anything useful so we don't get", 'start': 1688.88, 'duration': 4.0}
+{'text': 'any of these words just because we lower', 'start': 1691.039, 'duration': 3.681}
+{'text': 'the confidence but we get a hay up here', 'start': 1692.88, 'duration': 4.72}
+{'text': "in the tree so yeah that's not really", 'start': 1694.72, 'duration': 4.959}
+{'text': 'intelligent in this case we can go to', 'start': 1697.6, 'duration': 4.0}
+{'text': 'logos though and see if that changes', 'start': 1699.679, 'duration': 4.72}
+{'text': 'anything so if we go to logos.jpg', 'start': 1701.6, 'duration': 4.72}
+{'text': 'run this again with a lower confidence', 'start': 1704.399, 'duration': 3.76}
+{'text': 'threshold', 'start': 1706.32, 'duration': 4.32}
+{'text': 'yeah we can see way more uh but not', 'start': 1708.159, 'duration': 5.361}
+{'text': 'necessarily correct stuff so uh adidas', 'start': 1710.64, 'duration': 4.399}
+{'text': 'is a s', 'start': 1713.52, 'duration': 5.279}
+{'text': "uh then we have youtube wid so yeah it's", 'start': 1715.039, 'duration': 5.52}
+{'text': 'not really', 'start': 1718.799, 'duration': 3.681}
+{'text': 'a good thing but nvidia was classified i', 'start': 1720.559, 'duration': 3.6}
+{'text': 'think nvidia was not cloud uh not', 'start': 1722.48, 'duration': 4.64}
+{'text': 'recognized with a threshold of 80. but', 'start': 1724.159, 'duration': 4.081}
+{'text': 'yeah you can play around with the', 'start': 1727.12, 'duration': 3.679}
+{'text': 'settings here this is how you do ocr in', 'start': 1728.24, 'duration': 3.6}
+{'text': 'python', 'start': 1730.799, 'duration': 2.321}
+{'text': "so that's it for today's video if you", 'start': 1731.84, 'duration': 2.88}
+{'text': 'enjoyed hope you learned something if so', 'start': 1733.12, 'duration': 3.039}
+{'text': 'let me know by hitting the like button', 'start': 1734.72, 'duration': 2.8}
+{'text': 'leave a comment in the comment section', 'start': 1736.159, 'duration': 2.961}
+{'text': "down below and of course don't forget to", 'start': 1737.52, 'duration': 3.039}
+{'text': 'subscribe to this channel and hit the', 'start': 1739.12, 'duration': 3.12}
+{'text': 'notification bell to not miss a single', 'start': 1740.559, 'duration': 3.521}
+{'text': 'future video for free other than that', 'start': 1742.24, 'duration': 3.2}
+{'text': 'thank you much for watching see you next', 'start': 1744.08, 'duration': 3.5}
+{'text': 'video and bye', 'start': 1745.44, 'duration': 17.599}
+{'text': '[Music]', 'start': 1747.58, 'duration': 17.54}
+{'text': 'you', 'start': 1763.039, 'duration': 2.081}
